@@ -741,8 +741,6 @@ h3{
 .arrow-up.visible {
     opacity: 1;
     pointer-events: initial;
-    width: 70px;
-    height: 70px;
 }
 
 
