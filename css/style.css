@@ -94,7 +94,8 @@ h2{
     font-size: var(--font-medium);
     font-weight: var(--weight-semi-bold);
     color: var(--color-black);
-    margin: 8px 0;
+    margin: 16px 0;
+    color: #fbbc05;
 }
 
 h3{
@@ -143,6 +144,7 @@ h3{
     display: block;
     padding: 12px;
     z-index: 99999;
+    margin: 0
 }
 
 /* 로고 */
@@ -466,10 +468,14 @@ h3{
     padding-right: 52px;
 }
 .about_skills div{
-    width: 50px;
-    height: 50px;
+
     display: inline-block;
 }
+@media all and (min-width:1024px) and (max-width:1279px) { 
+    .about_contanier{
+        flex-direction: column;
+    }
+} 
 @media all and (min-width:768px) and (max-width:1023px) { 
     .about_contanier{
         flex-direction: column;
@@ -487,6 +493,50 @@ h3{
     }
 } 
 @media all and (min-width:480px) and (max-width:767px){
+    .section{
+        padding: 100px 10px;
+      }
+      .about_contanier{
+          flex-direction: column;
+      }
+      .about_container_right{
+          flex-direction: column;
+          margin: 0;
+      }
+      .about_container_right > div{
+          width: 70%;
+          margin: 0 auto;
+      }
+      .about_container_right div p{
+          text-align: left;
+      }
+}
+@media all and (max-width:479px){
+    #about{
+        padding: 100px 10px;
+    }
+    .about_contanier{
+        flex-direction: column;
+        padding: 40px 10px;
+    }
+    .about_container_right{
+        flex-direction: column;
+        margin: 0;
+    }
+    .about_container_right > div{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .about_container_right div p{
+        text-align: left;
+    }
+    .about_container_left{
+        width: 100%;
+    }
+    .about_avatar{
+        width: 190px;
+        height: 190px;
+    }
 
 }
 /* Work */
@@ -586,8 +636,8 @@ h3{
         padding: 50px 20px
     }
     .work .work_img{
-        width: 100%;
-        height: 200px;
+        width: 70%;
+        height: 300px;
         margin: 0 auto;
         background-color: #17467c;
     }
@@ -603,7 +653,8 @@ h3{
     }
     .work{
         flex-direction: column;
-        padding: 50px 20px
+        padding: 50px 20px;
+        background-color: var(--color-white);
     }
     .work .work_img{
         width: 100%;
@@ -614,6 +665,9 @@ h3{
     .work .work_text_box{
         padding: 0;
         text-align: center;
+    }
+    .work_text_box p{
+        color: var(--color-black);
     }
     .work_text_box p:nth-child(1){
         font-size: var(--font-regular)
@@ -626,6 +680,9 @@ h3{
     .work_text_box a{
         width: 100%;
         margin-bottom: 20px;
+    }
+    #contact{
+        padding: 50px 20px;
     }
 }
 
@@ -643,10 +700,11 @@ h3{
     opacity: 1;
 }
 
-.contact_title,
+
 .contact_email,
 .contact__rights {
     color: var(--color-white);
+    font-size: var(--font-medium);
 }
 
 .contact_title {
@@ -683,6 +741,8 @@ h3{
 .arrow-up.visible {
     opacity: 1;
     pointer-events: initial;
+    width: 70px;
+    height: 70px;
 }
 
 
