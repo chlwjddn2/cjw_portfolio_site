@@ -629,6 +629,12 @@ h3{
 .link_box{
     padding-top: 40px;
 }
+.link_box a{
+    transition: 300ms ease-in-out;
+}
+.link_box a:hover{
+    background-color: #fbbc05;
+}
 @media all and (min-width:768px) and (max-width:1023px) { 
     .work{
         flex-direction: column;
