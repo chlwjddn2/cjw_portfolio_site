@@ -29,6 +29,7 @@ const navbarMenu = document.querySelector('.navbar_menu');
 const nav = document.querySelector('.nav');
 navbarMenu.addEventListener('click', (event) => {
     const target = event.target;
+    console.log(target);
     const link = target.dataset.link;
     console.log('link: ', link);
     if(link == null) {
@@ -81,12 +82,8 @@ const sectionIds = [
     '#contact'
 ];
 
-const sections = sectionIds.map(id => document.querySelector(id));
 const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"]`));
-// console.log('section',sections);
-// console.log('navItems', navItems);
 
-let selectedNavIndex = 0;
 let selectedNavItem = navItems[0];
 function selectNavItem(selected) {
     selectedNavItem.classList.remove('active');
