@@ -745,6 +745,11 @@ h3{
     #contact.ani.active{
         border-radius: 60% 0 0 0;
     }
+    #footer .arrow-up{
+        font-size: 24px;
+        width: 60px;
+        height: 60px;
+    }
 }
 
 /* Arrow up */
