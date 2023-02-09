@@ -741,6 +741,11 @@ h3{
     color: var(--color-yellow);
     transition: all var(--animation-duration) ease-in;
 }
+@media all and (max-width:479px){
+    #contact.ani.active{
+        border-radius: 60% 0 0 0;
+    }
+}
 
 /* Arrow up */
 .arrow-up {
