@@ -14,13 +14,11 @@ document.addEventListener('scroll', () => {
 });
 
 document.addEventListener('scroll', () => {
-    
     if(window.scrollY>navbarHeight) {
         navbar.classList.add('navbar_dark');
     } else {
         navbar.classList.remove('navbar_dark');
     }
-
 });
 
 
@@ -29,9 +27,7 @@ const navbarMenu = document.querySelector('.navbar_menu');
 const nav = document.querySelector('.nav');
 navbarMenu.addEventListener('click', (event) => {
     const target = event.target;
-    console.log(target);
     const link = target.dataset.link;
-    console.log('link: ', link);
     if(link == null) {
         return;
     } 
@@ -39,6 +35,7 @@ navbarMenu.addEventListener('click', (event) => {
     scrollIntoView(link);
     selectNavItem(target);
 });
+
 //Navbar Toggleing 
 const navbarToggleBtn = document.querySelector('.navbar_toggle_btn');
 navbarToggleBtn.addEventListener('click',() => {
@@ -68,22 +65,18 @@ document.addEventListener('scroll', () => {
         ('visible');
     }
 })
-
 arrowUp.addEventListener('click', ()=> {
     scrollIntoView('#home')
 });
 
-
+//navbar에서 선택한 메뉴 active 부여
 const sectionIds = [
     '#home', 
     '#about', 
-    '#skills', 
     '#work', 
-    '#contact'
+    '#contact',
 ];
-
 const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"]`));
-
 let selectedNavItem = navItems[0];
 function selectNavItem(selected) {
     selectedNavItem.classList.remove('active');
@@ -91,11 +84,13 @@ function selectNavItem(selected) {
     selectedNavItem.classList.add('active');
 }
 
+//scrollIntoView 함수화
 function scrollIntoView(selector) {
     const scrollTo =  document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: "smooth"});
     selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
+
 // home화면 애니메이션 효과
 const snow_wrap = document.querySelector('.snow_wrap');
 function createSnow(){
@@ -105,7 +100,6 @@ function createSnow(){
     // document.body.appendChild(el);
     snow_wrap.appendChild(snow);
 }
-
 function randomPosition(){
     return Math.floor(Math.random() * window.innerWidth);
 }
@@ -114,18 +108,14 @@ for(let i = 0; i<300; i++){
 }
 
 //스크롤 애니메이션 효과
-const section = document.querySelectorAll('.ani');
+const ani = document.querySelectorAll('.ani');
 const about = document.querySelector('.about_contanier');
 function scollAnimate(){
     const windowHeight = window.innerHeight;
-    console.log('windowHeight' + windowHeight);
-    console.log('about: ' + about.getBoundingClientRect().top);
-    section.forEach((item)=>{
+    ani.forEach((item) => {
         let itemLocation = item.getBoundingClientRect().top;
-        // console.log('item: ',itemLocation);
         if(windowHeight > itemLocation){
-        item.classList.add('active');
+            item.classList.add('active');
         }
     });
 }
-

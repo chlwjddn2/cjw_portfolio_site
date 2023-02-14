@@ -247,7 +247,13 @@ h3{
     overflow: hidden;
     position: relative;
 }
-
+#home h2{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+    display: block;
+}
 
 #home::before{
     background-color: rgba(0,0,0,0.4);
