@@ -30,8 +30,7 @@ navbarMenu.addEventListener('click', (event) => {
     const link = target.dataset.link;
     if(link == null) {
         return;
-    } 
-    navbarMenu.classList.remove('open');
+    }
     scrollIntoView(link);
     selectNavItem(target);
 });
